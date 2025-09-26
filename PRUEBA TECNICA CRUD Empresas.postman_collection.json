@@ -1,0 +1,471 @@
+{
+	"info": {
+		"_postman_id": "07af4884-ff56-4f94-b4a9-aefb90cba8f7",
+		"name": "PRUEBA TECNICA CRUD Empresas",
+		"description": "Colección completa para probar todos los endpoints del CRUD de Empresas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15524550",
+		"_collection_link": "https://donielacosta1995.postman.co/workspace/Doniel~276f73a9-a89f-411f-aecd-2566b6dfcdad/collection/15524550-07af4884-ff56-4f94-b4a9-aefb90cba8f7?action=share&source=collection_link&creator=15524550"
+	},
+	"item": [
+		{
+			"name": "Empresas",
+			"item": [
+				{
+					"name": "todos los registros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/empresa-crud/public/api/empresas_list.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"empresa-crud",
+								"public",
+								"api",
+								"empresas_list.php"
+							]
+						},
+						"description": "Obtiene todas las empresas ordenadas por fecha_creacion DESC"
+					},
+					"response": []
+				},
+				{
+					"name": "buscar por nombre o id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/empresa-crud/public/api/empresas_list.php?search=DONIEL",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"empresa-crud",
+								"public",
+								"api",
+								"empresas_list.php"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "DONIEL",
+									"description": "Buscar por ID  o razon social (texto)"
+								}
+							]
+						},
+						"description": "Busca empresas por ID o razón social"
+					},
+					"response": []
+				},
+				{
+					"name": "buscar empresa por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/empresa-crud/public/api/empresas_get.php/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"empresa-crud",
+								"public",
+								"api",
+								"empresas_get.php",
+								"1"
+							]
+						},
+						"description": "Obtiene una empresa específica por su ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear empresa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"rif\": \"J-99999999-9\",\n  \"razon_social\": \"Empresa Test S.A.\",\n  \"direccion\": \"Av. Test, Edificio Test, Piso 1, Caracas, Venezuela\",\n  \"telefono\": \"+58 212 999-9999\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/empresa-crud/public/api/empresas_create.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"empresa-crud",
+								"public",
+								"api",
+								"empresas_create.php"
+							]
+						},
+						"description": "Crea una nueva empresa con los datos proporcionados"
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"rif\": \"J-99999999-9\",\n  \"razon_social\": \"Empresa Test Actualizada S.A.\",\n  \"direccion\": \"Av. Test Actualizada, Edificio Test, Piso 2, Caracas, Venezuela\",\n  \"telefono\": \"+58 212 888-8888\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/empresa-crud/public/api/empresas_update.php/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"empresa-crud",
+								"public",
+								"api",
+								"empresas_update.php",
+								"1"
+							]
+						},
+						"description": "Actualiza una empresa existente por su ID"
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/empresa-crud/public/api/empresas_delete.php/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"empresa-crud",
+								"public",
+								"api",
+								"empresas_delete.php",
+								"1"
+							]
+						},
+						"description": "Elimina una empresa (borrado lógico) por su ID"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Exportaciones-reportes",
+			"item": [
+				{
+					"name": "Exportar json pruebas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/empresa-crud/public/api/empresas_export_json.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"empresa-crud",
+								"public",
+								"api",
+								"empresas_export_json.php"
+							]
+						},
+						"description": "Exporta todas las empresas en formato JSON"
+					},
+					"response": []
+				},
+				{
+					"name": "json con flltro de empresa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/empresa-crud/public/api/empresas_export_json.php?search=ejemplo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"empresa-crud",
+								"public",
+								"api",
+								"empresas_export_json.php"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "ejemplo",
+									"description": "Filtrar exportación por término de búsqueda"
+								}
+							]
+						},
+						"description": "Exporta empresas filtradas en formato JSON"
+					},
+					"response": []
+				},
+				{
+					"name": "Generar Reporte PDF",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/empresa-crud/public//api/empresas_report_pdf.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"empresa-crud",
+								"public",
+								"",
+								"api",
+								"empresas_report_pdf.php"
+							]
+						},
+						"description": "Genera un reporte PDF con todas las empresas"
+					},
+					"response": []
+				},
+				{
+					"name": "Generar Reporte PDF con Filtro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/empresa-crud/public/api/empresas_report_pdf.php?search=ejemplo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"empresa-crud",
+								"public",
+								"api",
+								"empresas_report_pdf.php"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "ejemplo",
+									"description": "Filtrar reporte PDF por término de búsqueda"
+								}
+							]
+						},
+						"description": "Genera un reporte PDF con empresas filtradas"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "probando metodos",
+			"item": [
+				{
+					"name": "valida rif",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"rif\": \"INVALID-RIF\",\n  \"razon_social\": \"Empresa Test\",\n  \"direccion\": \"Dirección de prueba\",\n  \"telefono\": \"+58 212 000-0000\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/empresa-crud/public/api/empresas_create.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"empresa-crud",
+								"public",
+								"api",
+								"empresas_create.php"
+							]
+						},
+						"description": "Prueba validación de RIF con formato inválido"
+					},
+					"response": []
+				},
+				{
+					"name": "Validaciones - Campos Requeridos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"rif\": \"J-12345678-9\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/empresa-crud/public/api/empresas_create.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"empresa-crud",
+								"public",
+								"api",
+								"empresas_create.php"
+							]
+						},
+						"description": "Prueba validación de campos requeridos faltantes"
+					},
+					"response": []
+				},
+				{
+					"name": "Validaciones - RIF Duplicado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"rif\": \"J-12345678-9\",\n  \"razon_social\": \"Empresa Duplicada\",\n  \"direccion\": \"Dirección de prueba\",\n  \"telefono\": \"+58 212 000-0000\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/empresa-crud/public/api/empresas_create.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"empresa-crud",
+								"public",
+								"api",
+								"empresas_create.php"
+							]
+						},
+						"description": "Prueba validación de RIF duplicado"
+					},
+					"response": []
+				},
+				{
+					"name": "Error - Empresa No Encontrada",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/empresa-crud/public/api/empresas_get.php/99999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"empresa-crud",
+								"public",
+								"api",
+								"empresas_get.php",
+								"99999"
+							]
+						},
+						"description": "Prueba obtener empresa con ID inexistente"
+					},
+					"response": []
+				},
+				{
+					"name": "Búsqueda por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/empresa-crud/public/api/empresas_list.php?search=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"empresa-crud",
+								"public",
+								"api",
+								"empresas_list.php"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "1",
+									"description": "Búsqueda por ID numérico"
+								}
+							]
+						},
+						"description": "Prueba búsqueda por ID numérico"
+					},
+					"response": []
+				},
+				{
+					"name": "Búsqueda por Razón Social",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/empresa-crud/public/api/empresas_list.php?search=Ejemplo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"empresa-crud",
+								"public",
+								"api",
+								"empresas_list.php"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Ejemplo",
+									"description": "Búsqueda por razón social (case-insensitive)"
+								}
+							]
+						},
+						"description": "Prueba búsqueda por razón social"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost/empresa-crud/public",
+			"type": "string"
+		}
+	]
+}
