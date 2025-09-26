@@ -1,0 +1,41 @@
+# Archivos de configuración local
+.env
+.env.local
+.env.production
+
+# Dependencias de Composer
+/vendor/
+composer.lock
+
+# Archivos de log
+*.log
+logs/
+
+# Archivos temporales
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos de backup
+*.bak
+*.backup
+
+# Archivos de cache
+cache/
+tmp/
+
+# Archivos de sesión
+sessions/
+
+# Archivos de uploads (si se agregan en el futuro)
+uploads/
+
+# Archivos de configuración del servidor web
+.htaccess.local
